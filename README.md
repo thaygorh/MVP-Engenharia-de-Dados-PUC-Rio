@@ -1,6 +1,6 @@
 # MVP – Engenharia de Dados — PUC-Rio
 
-## Objetivo do MVP
+## Objetivo
 
 O objetivo deste MVP é **projetar e implementar um pipeline de dados em nuvem** para analisar e comparar o **desempenho histórico de ativos financeiros do mercado brasileiro**, abrangendo **renda variável (ações)** e **renda fixa**, a partir de dados públicos.
 
