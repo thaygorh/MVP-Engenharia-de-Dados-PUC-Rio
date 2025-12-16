@@ -18,10 +18,8 @@ Com base nesse objetivo, o MVP busca responder às seguintes questões:
 8. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para cada tipo de investimento ao longo do histórico disponível?
 9. Qual é a relação entre retorno e risco dos diferentes tipos de investimento, utilizando métricas simples como retorno médio versus volatilidade?
 10. Com base nos dados históricos analisados, qual tipo de investimento se mostrou mais adequado para perfis mais conservadores e mais arrojados, considerando retorno e risco?
----
 
 # Plataforma e Coleta de Dados
 
----
 
 **Autor:** Thaygor Gonçalves
