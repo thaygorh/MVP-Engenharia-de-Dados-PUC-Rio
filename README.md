@@ -1,4 +1,4 @@
-# MVP – Engenharia de Dados | PUC-Rio
+# MVP – Engenharia de Dados — PUC-Rio
 
 ## Objetivo do MVP
 
