@@ -15,17 +15,31 @@ Com base nesse objetivo, o MVP busca responder às seguintes questões:
 5. Considerando os últimos 5 anos, qual tipo de investimento apresentou a menor volatilidade média?
 6. Ao longo de todo o período histórico disponível, qual tipo de investimento apresentou maior consistência de retorno, considerando a menor variação ao longo do tempo?
 7. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para cada tipo de investimento ao longo do histórico disponível?
-9. Com base nos dados históricos analisados, qual tipo de investimento se mostrou mais adequado para perfis mais conservadores e mais arrojados, considerando retorno e risco?
+8. Com base nos dados históricos analisados, qual tipo de investimento se mostrou mais adequado para perfis mais conservadores e mais arrojados, considerando retorno e risco?
+
+---
 
 ## Plataforma e Coleta de Dados
 
-Para a implementação do pipeline de dados deste MVP, foi utilizada a plataforma Databricks Community Edition, uma solução em nuvem gratuita amplamente adotada em contextos acadêmicos e alinhada às ferramentas abordadas na disciplina. A plataforma foi empregada em todas as etapas do trabalho, incluindo a coleta, transformação, carga e análise dos dados, possibilitando a construção de pipelines de ETL e a execução de consultas analíticas em SQL, conforme os objetivos definidos.
+Para a implementação do pipeline de dados deste MVP, foi utilizada a plataforma **Databricks Community Edition**, uma solução em nuvem gratuita amplamente adotada em contextos acadêmicos e alinhada às ferramentas abordadas na disciplina.
 
-Os dados utilizados neste MVP foram obtidos a partir da plataforma Kaggle, por meio do dataset "Brazilian Stock Market" (https://www.kaggle.com/datasets/andrewmvd/brazilian-stock-market). Trata-se de um dataset de uso público para fins educacionais e de pesquisa.
+A plataforma foi empregada em todas as etapas do trabalho, incluindo coleta, transformação, carga e análise dos dados, possibilitando a construção de pipelines de ETL e a execução de consultas analíticas em SQL, conforme os objetivos definidos.
 
-A estratégia de coleta adotada consistiu no download direto de arquivos em formato CSV, disponibilizados publicamente pelo Kaggle. Por se tratar de um conjunto de dados já consolidado, não foi necessária a utilização de técnicas de web scraping ou a construção de robôs de coleta, garantindo conformidade com aspectos éticos e legais relacionados ao uso dos dados. Os arquivos foram inicialmente armazenados em sua forma original, preservando a estrutura fornecida pela fonte, sendo as transformações necessárias, como padronização de nomes de colunas realizadas posteriormente durante a etapa de ETL no ambiente do Databricks.
+Os dados utilizados neste MVP foram obtidos a partir da plataforma **Kaggle**, por meio do dataset **Brazilian Stock Market**  
+(https://www.kaggle.com/datasets/andrewmvd/brazilian-stock-market).  
+Trata-se de um dataset de uso público para fins educacionais e de pesquisa.
+
+A estratégia de coleta adotada consistiu no **download direto de arquivos em formato CSV**, disponibilizados publicamente pelo Kaggle. Por se tratar de um conjunto de dados já consolidado, não foi necessária a utilização de técnicas de web scraping ou a construção de robôs de coleta, garantindo conformidade com aspectos éticos e legais relacionados ao uso dos dados.
+
+Os arquivos foram inicialmente armazenados em sua forma original, preservando a estrutura fornecida pela fonte, sendo as transformações necessárias, como padronização de nomes de colunas, realizadas posteriormente durante a etapa de ETL no ambiente do Databricks.
+
+---
 
 ## Carga
+
+*(Seção a ser detalhada após a consolidação do pipeline de ETL no Databricks.)*
+
+---
 
 ## Modelagem dos Dados
 
@@ -38,7 +52,7 @@ A escolha desse modelo se justifica pela necessidade de:
 - realizar análises de retorno, volatilidade e consistência ao longo do tempo;
 - simplificar consultas analíticas utilizando SQL.
 
-O Esquema Estrela é composto por uma **tabela fato**, que armazena as métricas quantitativas do negócio, e por **tabelas dimensão**, que fornecem contexto temporal e categórico para essas métricas.
+O Esquema Estrela é composto por **tabelas fato**, que armazenam as métricas quantitativas do negócio, e por **tabelas dimensão**, que fornecem contexto temporal e categórico para essas métricas.
 
 ---
 
@@ -46,7 +60,7 @@ O Esquema Estrela é composto por uma **tabela fato**, que armazena as métricas
 
 O diagrama lógico do modelo de dados foi construído de acordo com o Esquema Estrela definido e está apresentado abaixo.
 
-<img width="1044" height="512" alt="image" src="https://github.com/user-attachments/assets/5569cd4c-839e-4a7b-84b8-96f4d42f6394" />
+<img width="1044" height="512" alt="Diagrama do Esquema Estrela" src="https://github.com/user-attachments/assets/5569cd4c-839e-4a7b-84b8-96f4d42f6394" />
 
 O modelo é composto pelas seguintes tabelas:
 
@@ -59,6 +73,22 @@ O modelo é composto pelas seguintes tabelas:
 - **fact_indicadores_economicos**: tabela fato que armazena indicadores macroeconômicos utilizados para análises comparativas.
 
 Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimensões para as tabelas fato, garantindo integridade referencial e consistência analítica.
+
+---
+
+### Considerações sobre Renda Fixa e Indicadores Macroeconômicos
+
+Os ativos de **renda fixa** não são representados por instrumentos individuais neste modelo.  
+Neste MVP, a renda fixa é analisada de forma indireta por meio de **indicadores macroeconômicos** armazenados na tabela `fact_indicadores_economicos`, incluindo:
+
+- **taxa_selic**: taxa básica de juros da economia brasileira;
+- **ipca**: índice oficial de inflação;
+- **igpm**: índice geral de preços;
+- **desemprego_pnad**: taxa de desemprego.
+
+Esses indicadores são utilizados como referência para a análise de retorno, risco e estabilidade, permitindo comparações indiretas com os ativos de renda variável negociados na B3, representados no modelo pelas ações listadas na dimensão `dim_acoes_b3`.
+
+O indicador de desemprego foi incluído no modelo por já estar disponível no conjunto de dados utilizado. Embora a correlação entre desemprego e desempenho de ativos financeiros não tenha sido um objetivo inicialmente definido neste MVP, sua presença foi considerada relevante por representar um fator macroeconômico que pode impactar o comportamento do mercado financeiro e dos ativos de renda variável, possibilitando análises exploratórias complementares.
 
 ---
 
@@ -112,7 +142,5 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 | desemprego_pnad | DOUBLE | Taxa de desemprego | >= 0 |
 
 ---
-
-
 
 **Autor:** Thaygor Gonçalves
