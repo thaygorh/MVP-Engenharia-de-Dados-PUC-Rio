@@ -72,23 +72,23 @@ O modelo é composto pelas seguintes tabelas:
 - **fact_acoes_b3**: tabela fato que armazena os preços históricos e volumes negociados das ações;
 - **fact_indicadores_economicos**: tabela fato que armazena indicadores macroeconômicos utilizados para análises comparativas.
 
-Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimensões para as tabelas fato, garantindo integridade referencial e consistência analítica.
+Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimensões para as tabelas fato. Esse formato padroniza chaves, reduz redundância e facilita consultas analíticas consistentes, especialmente em análises temporais.
 
 ---
 
 ### Considerações sobre Renda Fixa e Indicadores Macroeconômicos
 
-Os ativos de **renda fixa** não são representados por instrumentos individuais neste modelo.  
-Neste MVP, a renda fixa é analisada de forma indireta por meio de **indicadores macroeconômicos** armazenados na tabela `fact_indicadores_economicos`, incluindo:
+Neste MVP, não há dados de instrumentos individuais de **renda fixa** (ex.: Tesouro Direto, CDB, debêntures) no conjunto de dados utilizado.  
+Como alternativa, a renda fixa é analisada de forma indireta por meio de **indicadores macroeconômicos** armazenados na tabela `fact_indicadores_economicos`, incluindo:
 
 - **taxa_selic**: taxa básica de juros da economia brasileira;
 - **ipca**: índice oficial de inflação;
 - **igpm**: índice geral de preços;
 - **desemprego_pnad**: taxa de desemprego.
 
-Esses indicadores são utilizados como referência para a análise de retorno, risco e estabilidade, permitindo comparações indiretas com os ativos de renda variável negociados na B3, representados no modelo pelas ações listadas na dimensão `dim_acoes_b3`.
+Esses indicadores funcionam como variáveis de contexto macroeconômico e são utilizados como referência para análises comparativas com os ativos de renda variável representados no modelo pelas ações da dimensão `dim_acoes_b3`.
 
-O indicador de desemprego foi incluído no modelo por já estar disponível no conjunto de dados utilizado. Embora a correlação entre desemprego e desempenho de ativos financeiros não tenha sido um objetivo inicialmente definido neste MVP, sua presença foi considerada relevante por representar um fator macroeconômico que pode impactar o comportamento do mercado financeiro e dos ativos de renda variável, possibilitando análises exploratórias complementares.
+O indicador de desemprego foi mantido no modelo por já estar disponível no conjunto de dados e por representar um fator macroeconômico que pode impactar o comportamento do mercado e dos ativos de renda variável, possibilitando análises exploratórias complementares.
 
 ---
 
