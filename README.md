@@ -101,8 +101,8 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 | Atributo | Tipo | Descrição | Domínio Esperado |
 |--------|------|-----------|------------------|
 | date_id | INT | Identificador único da data | > 0 |
-| date | DATE | Data completa | Data válida |
-| year | INT | Ano | >= 1900 |
+| date | DATE | Data completa | >= 2000-01-01 e <= data atual |
+| year | INT | Ano | >= 2000 |
 | month | INT | Mês | 1 a 12 |
 | day | INT | Dia do mês | 1 a 31 |
 
@@ -113,7 +113,7 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 | Atributo | Tipo | Descrição | Domínio Esperado |
 |--------|------|-----------|------------------|
 | symbol_id | INT | Identificador único do ativo | > 0 |
-| symbol | STRING | Código do ativo negociado na B3 | Texto |
+| symbol | STRING | Código do ativo negociado na B3 | Texto não vazio |
 
 ---
 
@@ -121,8 +121,8 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 
 | Atributo | Tipo | Descrição | Domínio Esperado |
 |--------|------|-----------|------------------|
-| date_id | INT | Chave estrangeira para dim_date | > 0 |
-| symbol_id | INT | Chave estrangeira para dim_acoes_b3 | > 0 |
+| date_id | INT | Chave estrangeira para dim_date | > 0 e existente em dim_date |
+| symbol_id | INT | Chave estrangeira para dim_acoes_b3 | > 0 e existente em dim_acoes_b3 |
 | open | DOUBLE | Preço de abertura | >= 0 |
 | close | DOUBLE | Preço de fechamento | >= 0 |
 | high | DOUBLE | Maior preço do período | >= 0 |
@@ -135,11 +135,11 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 
 | Atributo | Tipo | Descrição | Domínio Esperado |
 |--------|------|-----------|------------------|
-| date_id | INT | Chave estrangeira para dim_date | > 0 |
+| date_id | INT | Chave estrangeira para dim_date | > 0 e existente em dim_date |
 | taxa_selic | DOUBLE | Taxa básica de juros | >= 0 |
-| ipca | DOUBLE | Índice de inflação | >= 0 |
-| igpm | DOUBLE | Índice Geral de Preços | >= 0 |
-| desemprego_pnad | DOUBLE | Taxa de desemprego | >= 0 |
+| ipca | DOUBLE | Índice de inflação | >= -50 e <= 100 |
+| igpm | DOUBLE | Índice Geral de Preços | >= -50 e <= 100 |
+| desemprego_pnad | DOUBLE | Taxa de desemprego | >= 0 e <= 100 |
 
 ---
 
