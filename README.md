@@ -27,7 +27,92 @@ A estratégia de coleta adotada consistiu no download direto de arquivos em form
 
 ## Carga
 
-## Modelagem
+## Modelagem dos Dados
+
+### Modelo de Dados
+
+Para este MVP, foi adotado o **modelo de dados em Esquema Estrela**, amplamente utilizado em projetos de Data Warehouse por facilitar consultas analíticas, agregações e análises temporais.
+
+A escolha desse modelo se justifica pela necessidade de:
+- comparar o desempenho histórico de diferentes tipos de ativos financeiros;
+- realizar análises de retorno, volatilidade e consistência ao longo do tempo;
+- simplificar consultas analíticas utilizando SQL.
+
+O Esquema Estrela é composto por uma **tabela fato**, que armazena as métricas quantitativas do negócio, e por **tabelas dimensão**, que fornecem contexto temporal e categórico para essas métricas.
+
+---
+
+### Diagrama Lógico
+
+O diagrama lógico do modelo de dados foi construído de acordo com o Esquema Estrela definido e está apresentado abaixo.
+
 <img width="1044" height="512" alt="image" src="https://github.com/user-attachments/assets/5569cd4c-839e-4a7b-84b8-96f4d42f6394" />
+
+O modelo é composto pelas seguintes tabelas:
+
+**Dimensões**
+- **dim_date**: dimensão temporal, utilizada para análises por data, mês e ano;
+- **dim_acoes_b3**: dimensão que representa os ativos de renda variável negociados na B3.
+
+**Fatos**
+- **fact_acoes_b3**: tabela fato que armazena os preços históricos e volumes negociados das ações;
+- **fact_indicadores_economicos**: tabela fato que armazena indicadores macroeconômicos utilizados para análises comparativas.
+
+Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimensões para as tabelas fato, garantindo integridade referencial e consistência analítica.
+
+---
+
+### Catálogo de Dados
+
+Foi construído um **Catálogo de Dados** com o objetivo de documentar os principais atributos das tabelas da camada Gold, descrevendo seu significado, tipo de dado e domínio esperado.
+
+#### dim_date
+
+| Atributo | Tipo | Descrição | Domínio Esperado |
+|--------|------|-----------|------------------|
+| date_id | INT | Identificador único da data | > 0 |
+| date | DATE | Data completa | Data válida |
+| year | INT | Ano | >= 1900 |
+| month | INT | Mês | 1 a 12 |
+| day | INT | Dia do mês | 1 a 31 |
+
+---
+
+#### dim_acoes_b3
+
+| Atributo | Tipo | Descrição | Domínio Esperado |
+|--------|------|-----------|------------------|
+| symbol_id | INT | Identificador único do ativo | > 0 |
+| symbol | STRING | Código do ativo negociado na B3 | Texto |
+
+---
+
+#### fact_acoes_b3
+
+| Atributo | Tipo | Descrição | Domínio Esperado |
+|--------|------|-----------|------------------|
+| date_id | INT | Chave estrangeira para dim_date | > 0 |
+| symbol_id | INT | Chave estrangeira para dim_acoes_b3 | > 0 |
+| open | DOUBLE | Preço de abertura | >= 0 |
+| close | DOUBLE | Preço de fechamento | >= 0 |
+| high | DOUBLE | Maior preço do período | >= 0 |
+| low | DOUBLE | Menor preço do período | >= 0 |
+| volume | DOUBLE | Volume negociado | >= 0 |
+
+---
+
+#### fact_indicadores_economicos
+
+| Atributo | Tipo | Descrição | Domínio Esperado |
+|--------|------|-----------|------------------|
+| date_id | INT | Chave estrangeira para dim_date | > 0 |
+| taxa_selic | DOUBLE | Taxa básica de juros | >= 0 |
+| ipca | DOUBLE | Índice de inflação | >= 0 |
+| igpm | DOUBLE | Índice Geral de Preços | >= 0 |
+| desemprego_pnad | DOUBLE | Taxa de desemprego | >= 0 |
+
+---
+
+
 
 **Autor:** Thaygor Gonçalves
