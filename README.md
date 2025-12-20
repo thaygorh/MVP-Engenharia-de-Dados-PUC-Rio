@@ -25,6 +25,9 @@ Os dados utilizados neste MVP foram obtidos a partir da plataforma Kaggle, por m
 
 A estratégia de coleta adotada consistiu no download direto de arquivos em formato CSV, disponibilizados publicamente pelo Kaggle. Por se tratar de um conjunto de dados já consolidado, não foi necessária a utilização de técnicas de web scraping ou a construção de robôs de coleta, garantindo conformidade com aspectos éticos e legais relacionados ao uso dos dados. Os arquivos foram inicialmente armazenados em sua forma original, preservando a estrutura fornecida pela fonte, sendo as transformações necessárias, como padronização de nomes de colunas realizadas posteriormente durante a etapa de ETL no ambiente do Databricks.
 
+## Carga
 
+## Modelagem
+<img width="1044" height="512" alt="image" src="https://github.com/user-attachments/assets/5569cd4c-839e-4a7b-84b8-96f4d42f6394" />
 
 **Autor:** Thaygor Gonçalves
