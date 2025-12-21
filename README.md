@@ -82,7 +82,8 @@ O Esquema Estrela é composto por **tabelas fato**, que armazenam as métricas q
 
 O diagrama lógico do modelo de dados foi construído de acordo com o Esquema Estrela definido e está apresentado abaixo.
 
-<img width="1044" height="512" alt="Diagrama do Esquema Estrela" src="https://github.com/user-attachments/assets/5569cd4c-839e-4a7b-84b8-96f4d42f6394" />
+<img width="1247" height="647" alt="image" src="https://github.com/user-attachments/assets/778df7dd-66be-4431-ac40-08058c456217" />
+
 
 O modelo é composto pelas seguintes tabelas:
 
