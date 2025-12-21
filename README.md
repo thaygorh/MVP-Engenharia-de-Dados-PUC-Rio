@@ -2,18 +2,21 @@
 
 ## Objetivo
 
-O objetivo deste MVP é projetar e implementar um pipeline de dados em nuvem para analisar e comparar o desempenho histórico de ativos financeiros do mercado brasileiro, a partir de dados públicos.
-
-A partir dos dados históricos coletados e tratados, o trabalho tem como finalidade avaliar retorno, risco e consistência de desempenho dos diferentes tipos de investimento ao longo do tempo, oferecendo uma visão comparativa clara entre renda fixa e renda variável, com foco em apoiar a compreensão do comportamento desses ativos, especialmente por pessoas sem conhecimento prévio em investimentos.
+O objetivo deste MVP é projetar e implementar um pipeline de dados em nuvem para analisar o desempenho histórico de ações negociadas na B3, a partir de dados públicos.
+A partir dos dados históricos coletados e tratados, o trabalho tem como finalidade avaliar retorno, risco e consistência de desempenho dos ativos de renda variável ao longo do tempo, apoiando análises comparativas entre diferentes ações e períodos.
+De forma complementar, indicadores macroeconômicos são utilizados como variáveis de contexto, permitindo observar o comportamento dos ativos em diferentes cenários econômicos.
 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
-1. Considerando os últimos 3 anos, quais os top 5 investimentos que apresentaram o maior retorno médio?
-2. Considerando os últimos 3 anos, qual tipo de investimento apresentou a maior média de retorno? e nos ultimos 12 meses?
-3. Considerando os últimos 3 anos, qual tipo de investimento apresentou a menor volatilidade média?
-4. Qual é a variabilidade (volatilidade) dos retornos dos ativos ao longo do tempo e como ela se comporta em diferentes períodos, ordenando os top 10 ativos mais estáveis e top 10 mais voláteis?
-5. Ao longo de todo o período histórico disponível, qual tipo de investimento apresentou maior consistência de retorno, considerando a menor variação ao longo do tempo?
-6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para cada tipo de investimento ao longo do histórico disponível?
+1. Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno médio?
+2. Considerando os últimos 3 anos, qual foi a média de retorno das ações analisadas? E como esse valor se comporta nos últimos 12 meses?
+3. Considerando os últimos 3 anos, quais ações apresentaram a menor volatilidade média, indicando maior estabilidade de preços?
+4. Qual é a variabilidade (volatilidade) dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando:
+- as 10 ações mais estáveis.
+- as 10 ações mais voláteis.
+5. Ao longo de todo o período histórico disponível, quais ações apresentaram maior consistência de retorno, considerando a menor variação ao longo do tempo?
+6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para as ações analisadas ao longo do histórico disponível?
+7. Como os principais indicadores macroeconômicos (ex.: taxa Selic, inflação) se comportaram nos períodos de melhor e pior desempenho das ações, servindo como contexto para a análise dos resultados?
 
 ---
 
