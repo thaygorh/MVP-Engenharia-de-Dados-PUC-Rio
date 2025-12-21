@@ -353,32 +353,28 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 - Observa-se que, em determinados anos, a Selic baixa coexistiu com níveis elevados de desemprego, enquanto em outros a Selic elevada ocorreu simultaneamente à redução do desemprego.
 
 ---
+
 ## Discussão Geral
 
-A solução desenvolvida neste MVP demonstrou a viabilidade da construção de um pipeline de dados em nuvem capaz de integrar dados de mercado financeiro e indicadores macroeconômicos de forma
-estruturada, consistente e analítica.
+De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, evidenciando diferenças relevantes no desempenho histórico das ações analisadas. Observou-se que os ativos apresentaram comportamentos distintos ao longo do tempo, tanto em termos de retorno acumulado quanto de volatilidade, reforçando a importância de análises históricas e comparativas para a avaliação de risco e consistência no mercado de ações.
 
-A utilização do modelo em Esquema Estrela possibilitou a padronização temporal dos dados, facilitando análises comparativas entre ativos de renda variável e variáveis macroeconômicas.
-O pipeline implementado no Databricks, organizado nas camadas Bronze e Gold, mostrou-se apropriado para realizar a ingestão, transformação, validação e disponibilização dos dados para análise.
+Os resultados indicaram que ativos com maiores retornos tendem a apresentar níveis mais elevados de volatilidade, enquanto outros demonstraram desempenho mais estável ao longo do período analisado. Essa heterogeneidade evidencia que a avaliação isolada de retorno não é suficiente, sendo necessária a consideração conjunta de métricas de risco para uma análise mais consistente.
 
-As análises realizadas evidenciaram diferenças significativas no desempenho das ações analisadas, com forte heterogeneidade tanto nos retornos acumulados quanto nos níveis de volatilidade ao longo do período observado. Enquanto alguns ativos apresentaram elevada valorização no intervalo analisado, outros demonstraram comportamento mais estável, com menores oscilações de preço, evidenciando perfis distintos de risco e retorno entre as ações negociadas na B3.
+Em relação aos indicadores macroeconômicos, verificou-se que variáveis como IPCA, taxa Selic e desemprego apresentaram comportamentos distintos ao longo dos anos, sem uma relação linear com o desempenho dos ativos analisados. Esse resultado destaca a complexidade do ambiente econômico e reforça a necessidade de utilizar esses indicadores como variáveis de contexto.
 
-No contexto macroeconômico, a análise conjunta dos indicadores de inflação (IPCA), taxa Selic e desemprego indicou que essas variáveis não apresentam uma relação linear estável ao longo do tempo. Observou-se que, em determinados anos, movimentos de alta ou baixa da taxa Selic ocorreram simultaneamente a variações distintas nos níveis de inflação e desemprego, reforçando a necessidade de análises contextualizadas para interpretação do ambiente econômico.
-
-De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, evidenciando que o propósito do trabalho foi cumprido e que os conceitos abordados nas disciplinas foram aplicados de forma prática.
+Dessa forma, a utilização de um pipeline de dados estruturado em nuvem, aliado a um modelo analítico em Esquema Estrela, mostrou-se adequada para integrar diferentes fontes de dados e fornecer uma base consistente para análises exploratórias e suporte à tomada de decisão no contexto deste MVP.
 
 ---
 
 ## Autoavaliação
 
-O desenvolvimento deste MVP permitiu a aplicação prática dos conceitos de Engenharia de Dados, abrangendo desde a coleta e organização dos dados até a modelagem, carga e análise final. Os objetivos definidos no início do trabalho foram atingidos, sendo possível responder às principais perguntas de negócio propostas a partir dos dados disponibilizados.
+O desenvolvimento deste MVP permitiu a aplicação prática dos conceitos de Engenharia de Dados, abrangendo desde a coleta e organização dos dados até a modelagem, carga e análise final. Os objetivos definidos no início do trabalho foram atingidos, sendo possível responder às principais perguntas definidas no objetivo.
 
-Embora já atue profissionalmente com dados, este MVP representou minha primeira experiência prática na construção de um pipeline utilizando o Databricks, bem como na modelagem e documentação de dados no formato de esquema estrela. Ao longo do trabalho, assimilei novos conceitos de SQL aplicados a consultas analíticas, os quais poderão ser utilizados no meu dia a dia profissional.
+Embora já atue profissionalmente com dados, este MVP representou minha primeira experiência prática na construção de um pipeline utilizando o Databricks, bem como na modelagem e documentação de dados no formato de esquema estrela. Ao longo do trabalho, assimilei novos conceitos de SQL aplicados a consultas, os quais poderão ser utilizados no meu dia a dia profissional.
 
-Durante a execução do MVP, as principais dificuldades estiveram relacionadas à padronização temporal entre diferentes conjuntos de dados, à identificação de datasets aderentes ao tema definido no objetivo, ao aprendizado de novas ferramentas, como o Databricks, e à validação da qualidade dos atributos. Adicionalmente, a construção de consultas SQL mais extensas e complexas exigiu atenção especial, principalmente na organização e depuração de queries longas necessárias para responder a algumas das perguntas definidas no objetivo, demandando ajustes ao longo do desenvolvimento.
+Durante a execução do MVP, as principais dificuldades estiveram relacionadas à padronização temporal entre diferentes conjuntos de dados, à identificação de datasets aderentes ao tema definido no objetivo, ao aprendizado de novas ferramentas, como o Databricks, e à validação da qualidade dos atributos. Além disso, a construção de consultas SQL mais extensas e complexas exigiu atenção, principalmente na organização e depuração de queries longas necessárias para responder algumas das perguntas.
 
-Como limitações do MVP, destaca-se a dependência de dados públicos previamente consolidados. Como trabalhos futuros, devo incluir novos indicadores, como ativos de renda fixa e fundos imobiliários, e desenvolver dashboards para apoio e facilitar a explicação.
-
+Como limitações do MVP, destaca-se a dependência de dados públicos. Como trabalhos futuros, devo incluir novos indicadores, como ativos de renda fixa e fundos imobiliários, e desenvolver dashboards para apoio e facilitar a explicação.
 
 ---
 
