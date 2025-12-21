@@ -355,25 +355,25 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 
 ## Discussão Geral
 
-De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, evidenciando diferenças relevantes no desempenho histórico das ações analisadas. Observou-se que os ativos apresentaram comportamentos distintos ao longo do tempo, tanto em termos de retorno acumulado quanto de volatilidade, reforçando a importância de análises históricas e comparativas para a avaliação de risco e consistência no mercado de ações.
+De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, evidenciando que o desempenho histórico das ações analisadas apresenta variações significativas ao longo do tempo. As análises mostraram que não há um comportamento único entre os ativos, sendo possível observar diferenças relevantes tanto nos retornos acumulados quanto nos níveis de volatilidade.
 
-Os resultados indicaram que ativos com maiores retornos tendem a apresentar níveis mais elevados de volatilidade, enquanto outros demonstraram desempenho mais estável ao longo do período analisado. Essa heterogeneidade evidencia que a avaliação isolada de retorno não é suficiente, sendo necessária a consideração conjunta de métricas de risco para uma análise mais consistente.
+Os resultados indicam que ações com maiores retornos tendem a apresentar maior volatilidade, enquanto outras demonstraram um desempenho mais estável. Esse comportamento reforça que a análise isolada do retorno pode ser insuficiente para avaliar o desempenho das ações de forma equilibrada, tornando necessária a consideração conjunta de métricas de risco, como a volatilidade.
 
-Em relação aos indicadores macroeconômicos, verificou-se que variáveis como IPCA, taxa Selic e desemprego apresentaram comportamentos distintos ao longo dos anos, sem uma relação linear com o desempenho dos ativos analisados. Esse resultado destaca a complexidade do ambiente econômico e reforça a necessidade de utilizar esses indicadores como variáveis de contexto.
+Em relação aos indicadores macroeconômicos, como IPCA, taxa Selic e desemprego, observou-se que esses apresentam comportamentos independentes ao longo dos anos. Dessa forma, esses indicadores mostraram-se mais adequados como elementos de contexto para a interpretação dos resultados, auxiliando na compreensão de períodos atípicos e variações mais amplas do mercado. Em especial, métricas como o IPCA foram utilizadas como referência para avaliar o ganho ou a perda real das ações ao longo do tempo, permitindo uma leitura mais contextualizada dos retornos observados.
 
-Dessa forma, a utilização de um pipeline de dados estruturado em nuvem, aliado a um modelo analítico em Esquema Estrela, mostrou-se adequada para integrar diferentes fontes de dados e fornecer uma base consistente para análises exploratórias e suporte à tomada de decisão no contexto deste MVP.
+Por fim, a estruturação dos dados por meio de um pipeline em nuvem, utilizando um modelo analítico em Esquema Estrela, possibilitou a integração de diferentes fontes de dados e facilitou a realização das análises apresentadas, oferecendo uma base organizada e consistente para exploração e interpretação dos resultados.
 
 ---
 
 ## Autoavaliação
 
-O desenvolvimento deste MVP permitiu a aplicação prática dos conceitos de Engenharia de Dados, abrangendo desde a coleta e organização dos dados até a modelagem, carga e análise final. Os objetivos definidos no início do trabalho foram atingidos, sendo possível responder às principais perguntas definidas no objetivo.
+O desenvolvimento deste MVP permitiu a aplicação prática dos conceitos de Engenharia de Dados, abrangendo desde a coleta e organização dos dados até a modelagem, carga e análise final. Os objetivos definidos no início do trabalho foram atingidos, sendo possível responder as perguntas definidas no objetivo.
 
 Embora já atue profissionalmente com dados, este MVP representou minha primeira experiência prática na construção de um pipeline utilizando o Databricks, bem como na modelagem e documentação de dados no formato de esquema estrela. Ao longo do trabalho, assimilei novos conceitos de SQL aplicados a consultas, os quais poderão ser utilizados no meu dia a dia profissional.
 
-Durante a execução do MVP, as principais dificuldades estiveram relacionadas à padronização temporal entre diferentes conjuntos de dados, à identificação de datasets aderentes ao tema definido no objetivo, ao aprendizado de novas ferramentas, como o Databricks, e à validação da qualidade dos atributos. Além disso, a construção de consultas SQL mais extensas e complexas exigiu atenção, principalmente na organização e depuração de queries longas necessárias para responder algumas das perguntas.
+Durante a execução do MVP, as principais dificuldades estiveram relacionadas à padronização temporal entre diferentes conjuntos de dados, à identificação de datasets aderentes ao tema definido no objetivo, ao aprendizado de novas ferramentas, como o Databricks, e à validação da qualidade dos atributos. Além disso, a construção de consultas SQL mais extensas e complexas exigiu atenção, principalmente na organização e depuração de queries longas, necessárias para responder algumas das perguntas.
 
-Como limitações do MVP, destaca-se a dependência de dados públicos. Como trabalhos futuros, devo incluir novos indicadores, como ativos de renda fixa e fundos imobiliários, e desenvolver dashboards para apoio e facilitar a explicação.
+Como limitações do MVP, destaca-se a dependência de dados públicos. Como trabalhos futuros, gostaria de incluir novos indicadores, como ativos de renda fixa e fundos imobiliários, e desenvolver dashboards para apoio e facilitar a explicação.
 
 ---
 
