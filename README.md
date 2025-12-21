@@ -171,6 +171,29 @@ Os dados têm origem em arquivos públicos no formato CSV, obtidos a partir da p
 
 A dimensão `dim_date` atua como ponto central de integração temporal entre as tabelas fato, permitindo análises comparativas entre dados de mercado (ações) e indicadores macroeconômicos.
 
+### Transformações e Carga dos Dados (ETL)
+
+Após a ingestão e organização dos dados nas camadas Raw e Bronze, foi implementado o processo de transformação e carga para a camada Gold, com o objetivo de disponibilizar dados analíticos consistentes e aderentes ao modelo em Esquema Estrela.
+
+As principais transformações aplicadas foram:
+
+- **Padronização temporal**:  
+  Foi definido um intervalo de datas comum entre os conjuntos de dados de ações e indicadores econômicos, garantindo consistência analítica.  
+  O período considerado vai de **2010-01-04** até **2025-02-17**.
+
+- **Criação de chaves substitutas**:  
+  Foram criadas chaves numéricas (`date_id`, `symbol_id`) para representar datas e ativos, reduzindo dependências de campos textuais e facilitando junções analíticas.
+
+- **Junções entre dados e dimensões**:  
+  As tabelas fato foram construídas a partir de junções entre os dados da camada Bronze e as dimensões `dim_date` e `dim_acoes_b3`, seguindo o padrão 1:N característico do Esquema Estrela.
+
+- **Aplicação de filtros e tratamentos**:  
+  Foram aplicados filtros temporais, conversão explícita de tipos de dados e padronização de nomes de colunas.  
+  Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para auditoria e validações futuras.
+
+O resultado desse processo é a disponibilização de tabelas fato e dimensões consistentes, persistidas na camada Gold e prontas para análises analíticas e exploração dos dados.
+
+
 ---
 
 **Autor:** Thaygor Gonçalves
