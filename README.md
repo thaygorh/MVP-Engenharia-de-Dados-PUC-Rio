@@ -360,4 +360,17 @@ De forma geral, os resultados obtidos permitiram responder às perguntas de neg�
 
 ---
 
+## Autoavaliação
+
+O desenvolvimento deste MVP permitiu a aplicação prática dos conceitos de Engenharia de Dados, abrangendo desde a coleta e organização dos dados até a modelagem, carga e análise final. Os objetivos definidos no início do trabalho foram atingidos, sendo possível responder às principais perguntas de negócio propostas a partir dos dados disponibilizados.
+
+Embora já atue profissionalmente com dados, este MVP representou minha primeira experiência prática na construção de um pipeline utilizando o Databricks, bem como na modelagem e documentação de dados no formato de esquema estrela. Ao longo do trabalho, assimilei novos conceitos de SQL aplicados a consultas analíticas, os quais poderão ser utilizados no meu dia a dia profissional.
+
+Durante a execução do MVP, as principais dificuldades estiveram relacionadas à padronização temporal entre diferentes conjuntos de dados, à identificação de datasets aderentes ao tema definido no objetivo, ao aprendizado de novas ferramentas, como o Databricks, e à validação da qualidade dos atributos. Adicionalmente, a construção de consultas SQL mais extensas e complexas exigiu atenção especial, principalmente na organização e depuração de queries longas necessárias para responder a algumas das perguntas definidas no objetivo, demandando ajustes ao longo do desenvolvimento.
+
+Como limitações do MVP, destaca-se a dependência de dados públicos previamente consolidados. Como trabalhos futuros, devo incluir novos indicadores, como ativos de renda fixa e fundos imobiliários, e desenvolver dashboards para apoio e facilitar a explicação.
+
+
+---
+
 **Autor:** Thaygor Gonçalves
