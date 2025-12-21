@@ -8,14 +8,12 @@ A partir dos dados históricos coletados e tratados, o trabalho tem como finalid
 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
-1. Qual é o retorno médio histórico dos ativos analisados, considerando diferentes períodos de tempo (curto, médio e longo prazo)?
-2. Qual é a variabilidade (volatilidade) dos retornos dos ativos ao longo do tempo e como ela se comporta em diferentes períodos, ordenando os ativos do mais estável ao mais volátil?
-3. Considerando os últimos 5 anos, qual tipo de investimento (renda variável ou renda fixa) apresentou o maior retorno acumulado?
-4. Considerando os últimos 5 anos, qual tipo de investimento apresentou a maior média de retorno?
-5. Considerando os últimos 5 anos, qual tipo de investimento apresentou a menor volatilidade média?
-6. Ao longo de todo o período histórico disponível, qual tipo de investimento apresentou maior consistência de retorno, considerando a menor variação ao longo do tempo?
-7. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para cada tipo de investimento ao longo do histórico disponível?
-8. Com base nos dados históricos analisados, qual tipo de investimento se mostrou mais adequado para perfis mais conservadores e mais arrojados, considerando retorno e risco?
+1. Considerando os últimos 3 anos, qual tipo de investimento (renda variável ou renda fixa) apresentou o maior retorno acumulado?
+2. Considerando os últimos 3 anos, qual tipo de investimento apresentou a maior média de retorno? e nos ultimos 12 meses?
+3. Considerando os últimos 3 anos, qual tipo de investimento apresentou a menor volatilidade média?
+4. Qual é a variabilidade (volatilidade) dos retornos dos ativos ao longo do tempo e como ela se comporta em diferentes períodos, ordenando os top 10 ativos mais estáveis e top 10 mais voláteis?
+5. Ao longo de todo o período histórico disponível, qual tipo de investimento apresentou maior consistência de retorno, considerando a menor variação ao longo do tempo?
+6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para cada tipo de investimento ao longo do histórico disponível?
 
 ---
 
