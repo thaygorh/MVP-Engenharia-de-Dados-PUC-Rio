@@ -34,7 +34,7 @@ Os arquivos foram inicialmente armazenados em sua forma original, preservando a 
 
 <img width="1159" height="331" alt="image" src="https://github.com/user-attachments/assets/d98083bf-64da-4983-bc9f-3ab9744c792e" />
 
-**Evidência  – Leitura dos arquivos CSV e criação das views na camada Bronze**
+**Evidência – Leitura dos arquivos CSV e criação das views na camada Bronze**
 
 <img width="401" height="711" alt="image" src="https://github.com/user-attachments/assets/2fb06360-d5bb-4e2c-ab03-f27a37037ffd" />
 
@@ -195,6 +195,14 @@ As principais transformações aplicadas foram:
   Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para auditoria e validações futuras.
 
 O resultado desse processo é a disponibilização de tabelas fato e dimensões consistentes, persistidas na camada Gold e prontas para análises analíticas e exploração dos dados.
+
+**Evidência – Tabelas persistidas na camada Gold (dimensões e fatos)**
+
+<img width="947" height="614" alt="image" src="https://github.com/user-attachments/assets/3f85b8e5-4137-4cd0-99f3-80f934993afc" />
+
+**Evidência – Verificação de consistência temporal (intervalo comum)**
+
+<img width="427" height="242" alt="image" src="https://github.com/user-attachments/assets/8c533097-cf01-489a-8702-9e9c0a481c5b" />
 
 ---
 
