@@ -8,7 +8,7 @@ A partir dos dados históricos coletados e tratados, o trabalho tem como finalid
 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
-1. Considerando os últimos 3 anos, qual tipo de investimento (renda variável ou renda fixa) apresentou o maior retorno acumulado?
+1. Considerando os últimos 3 anos, liste o top 5 investimentos que apresentaram o maior retorno médio?
 2. Considerando os últimos 3 anos, qual tipo de investimento apresentou a maior média de retorno? e nos ultimos 12 meses?
 3. Considerando os últimos 3 anos, qual tipo de investimento apresentou a menor volatilidade média?
 4. Qual é a variabilidade (volatilidade) dos retornos dos ativos ao longo do tempo e como ela se comporta em diferentes períodos, ordenando os top 10 ativos mais estáveis e top 10 mais voláteis?
