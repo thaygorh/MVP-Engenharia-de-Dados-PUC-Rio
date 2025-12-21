@@ -193,6 +193,46 @@ As principais transformações aplicadas foram:
 
 O resultado desse processo é a disponibilização de tabelas fato e dimensões consistentes, persistidas na camada Gold e prontas para análises analíticas e exploração dos dados.
 
+---
+
+### Análise de Qualidade dos Dados
+
+A análise de qualidade dos dados foi realizada de forma incremental ao longo das camadas **Bronze** e **Gold**, com o objetivo de apoiar decisões técnicas do pipeline e garantir consistência para as análises finais.
+
+#### Camada Bronze
+
+Na etapa de exploração inicial dos dados brutos, foram realizadas verificações estruturais e estatísticas que resultaram nas seguintes decisões:
+
+- A tabela `indices_b3` não apresentou registros após a leitura dos dados brutos.  
+  O conjunto foi mantido apenas para fins de documentação, mas não foi utilizado nas etapas seguintes do MVP.
+
+- A análise exploratória dos dados de ações identificou a presença de valores iguais a zero ou negativos em colunas de preço (`open`, `high`, `low` e `close`), comportamento já observado na origem dos dados.
+
+- A verificação temporal permitiu identificar o intervalo comum entre os conjuntos de dados, utilizado posteriormente como referência para a carga na camada Gold.
+
+Essas análises orientaram a definição do escopo efetivamente utilizado no MVP e a parametrização das etapas de transformação.
+
+#### Camada Gold
+
+Após a aplicação do modelo em Esquema Estrela, foram realizadas validações de qualidade na camada Gold, incluindo:
+
+- **Valores nulos**:  
+  Não foram identificados valores nulos nas colunas críticas das tabelas fato (`fact_acoes_b3` e `fact_indicadores_economicos`).
+
+- **Valores inválidos em preços**:  
+  Foram identificados registros com valores iguais a zero ou negativos nas colunas `open`, `high` e `low`, já presentes desde a camada Bronze e mantidos para preservar a fidelidade ao conjunto de dados original.
+
+- **Preço de fechamento (`close`)**:  
+  A coluna `close` apresentou apenas um registro inválido em todo o conjunto, motivo pelo qual foi priorizada como base principal para as análises de retorno e volatilidade deste MVP.
+
+- **Preço ajustado (`adj_close`)**:  
+  Não foram identificados valores nulos nessa coluna.
+
+- **Consistência temporal**:  
+  As tabelas fato compartilham um intervalo temporal comum entre **2010-01-04** e **2025-02-17**, garantindo coerência para análises comparativas.
+
+As consultas detalhadas, estatísticas descritivas e validações aplicadas encontram-se documentadas no notebook do Databricks, referenciado neste repositório.
+
 
 ---
 
