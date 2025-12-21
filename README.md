@@ -205,7 +205,8 @@ Na etapa de exploração inicial dos dados brutos, foram realizadas verificaçõ
 
 - A tabela `indices_b3` não apresentou registros após a leitura dos dados brutos.  
   O conjunto foi mantido apenas para fins de documentação, mas não foi utilizado nas etapas seguintes do MVP.
-  **Evidência:**
+  
+**Evidência:**
 <img width="1832" height="403" alt="image" src="https://github.com/user-attachments/assets/bc876c4b-cf9a-4651-b395-8b06ebb4a857" />
 
 - A verificação temporal permitiu identificar o intervalo comum (min e max) entre os conjuntos de dados, utilizado posteriormente como referência para a carga na camada Gold.
@@ -216,7 +217,7 @@ Na etapa de exploração inicial dos dados brutos, foram realizadas verificaçõ
 **Estatísticas descritivas iniciais - Indicadores Econômicos:**
 <img width="693" height="251" alt="image" src="https://github.com/user-attachments/assets/16b0a22f-2ea0-431a-b35d-ee5abb57128d" />
 
-Essas análises orientaram a definição do escopo efetivamente utilizado no MVP e a parametrização das etapas de transformação.
+Essas análises orientaram a definição do escopo utilizado no MVP e a parametrização das etapas de transformação.
 
 #### Camada Gold
 
@@ -225,17 +226,28 @@ Após a aplicação do modelo em Esquema Estrela, foram realizadas validações 
 - **Valores nulos**:  
   Não foram identificados valores nulos nas colunas críticas das tabelas fato (`fact_acoes_b3` e `fact_indicadores_economicos`).
 
-- **Valores inválidos em preços**:  
-  Foram identificados registros com valores iguais a zero ou negativos nas colunas `open`, `high` e `low`, já presentes desde a camada Bronze e mantidos para preservar a fidelidade ao conjunto de dados original.
+**Evidências:**
+<img width="652" height="345" alt="image" src="https://github.com/user-attachments/assets/8770db10-f05d-45ff-b78e-c11a652b1802" />
 
-- **Preço de fechamento (`close`)**:  
-  A coluna `close` apresentou apenas um registro inválido em todo o conjunto, motivo pelo qual foi priorizada como base principal para as análises de retorno e volatilidade deste MVP.
+<img width="686" height="320" alt="image" src="https://github.com/user-attachments/assets/af16d1e8-2be6-47b8-9765-82d9f1af03b5" />
+
+- **Valores inválidos em preços**:  
+Foram identificados registros com valores iguais a zero ou negativos nas colunas de preços (open, high e low). Para as análises propostas neste MVP, será priorizado o uso do preço de fechamento (close), uma vez que apresentou apenas um registro inválido em todo o conjunto de dados, reduzindo o possíveis inconsistências.
+
+**Evidência:**
+<img width="567" height="326" alt="image" src="https://github.com/user-attachments/assets/d3a6cf17-baae-4fb9-b028-75f577985b9d" />
 
 - **Preço ajustado (`adj_close`)**:  
   Não foram identificados valores nulos nessa coluna.
 
+**Evidência:**
+<img width="550" height="245" alt="image" src="https://github.com/user-attachments/assets/482c2a90-3b8c-49dc-82ed-18d3f95b30e0" />
+
 - **Consistência temporal**:  
   As tabelas fato compartilham um intervalo temporal comum entre **2010-01-04** e **2025-02-17**, garantindo coerência para análises comparativas.
+
+**Evidência:**
+<img width="440" height="250" alt="image" src="https://github.com/user-attachments/assets/0ab99db7-ecad-4c87-82ac-6dd0b64669b1" />
 
 As consultas detalhadas, estatísticas descritivas e validações aplicadas encontram-se documentadas no notebook do Databricks, referenciado neste repositório.
 
