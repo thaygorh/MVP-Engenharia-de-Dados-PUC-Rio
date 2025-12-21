@@ -30,6 +30,14 @@ A estratégia de coleta adotada consistiu no **download direto de arquivos em fo
 
 Os arquivos foram inicialmente armazenados em sua forma original, preservando a estrutura fornecida pela fonte, sendo as transformações necessárias, como padronização de nomes de colunas, realizadas posteriormente durante a etapa de ETL no ambiente do Databricks.
 
+**Evidência – Upload/armazenamento dos CSVs no Databricks**
+
+<img width="1159" height="331" alt="image" src="https://github.com/user-attachments/assets/d98083bf-64da-4983-bc9f-3ab9744c792e" />
+
+**Evidência  – Leitura dos arquivos CSV e criação das views na camada Bronze**
+
+<img width="401" height="711" alt="image" src="https://github.com/user-attachments/assets/2fb06360-d5bb-4e2c-ab03-f27a37037ffd" />
+
 ---
 
 ## Carga
