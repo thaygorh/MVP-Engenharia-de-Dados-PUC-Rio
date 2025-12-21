@@ -57,7 +57,7 @@ Como resultado desse processo, foram disponibilizadas tabelas dimensão (`dim_da
 
 ## Notebook do MVP
 
-O notebook utilizado no desenvolvimento deste MVP, contendo todas as etapas de ingestão, transformação, carga e análise dos dados, está disponível publicamente no GitHub no link abaixo:
+O notebook utilizado no desenvolvimento deste MVP foi criado e executado na plataforma Databricks Community Edition, contendo todas as etapas de ingestão, transformação, carga e análise dos dados, e está disponível publicamente no GitHub no link abaixo:
 
 https://github.com/thaygorh/MVP-Engenharia-de-Dados-PUC-Rio/blob/main/Notebook_Databricks_MVP_Eng_de_Dados.ipynb
 
