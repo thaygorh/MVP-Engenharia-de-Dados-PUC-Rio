@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O objetivo deste MVP é projetar e implementar um pipeline de dados em nuvem para analisar o desempenho histórico de ações negociadas na B3, a partir de dados públicos.
+O objetivo deste MVP é implementar um pipeline de dados em nuvem para analisar o desempenho histórico de ações negociadas na B3, a partir de dados públicos.
 Com base nos dados históricos coletados e tratados, o trabalho visa avaliar o retorno, o risco e a consistência de desempenho dos ativos de renda variável ao longo do tempo, apoiando análises comparativas entre diferentes ações e períodos.
 De forma complementar, utilizar indicadores macroeconômicos como variáveis de contexto, permitindo observar o comportamento dos ativos em distintos cenários econômicos.
 
@@ -26,7 +26,7 @@ Os dados utilizados neste MVP foram obtidos a partir da plataforma **Kaggle**, p
 (https://www.kaggle.com/datasets/andrewmvd/brazilian-stock-market).  
 Trata-se de um dataset de uso público para fins educacionais e de pesquisa.
 
-A estratégia de coleta adotada consistiu no **download direto de arquivos em formato CSV**, disponibilizados publicamente pelo Kaggle. Por se tratar de um conjunto de dados já consolidado, não foi necessária a utilização de técnicas de web scraping ou a construção de robôs de coleta, garantindo conformidade com aspectos éticos e legais relacionados ao uso dos dados.
+A estratégia de coleta adotada consistiu no download direto de arquivos em formato CSV, disponibilizados publicamente pelo Kaggle. Por se tratar de um conjunto de dados já consolidado, não foi necessária a utilização de técnicas de web scraping ou a construção de robôs de coleta, garantindo conformidade com aspectos éticos e legais relacionados ao uso dos dados.
 
 Os arquivos foram inicialmente armazenados em sua forma original, preservando a estrutura fornecida pela fonte, sendo as transformações necessárias, como padronização de nomes de colunas, realizadas posteriormente durante a etapa de ETL no ambiente do Databricks.
 
