@@ -212,9 +212,11 @@ Na etapa de exploração inicial dos dados brutos, foram realizadas verificaçõ
 - A verificação temporal permitiu identificar o intervalo comum (min e max) entre os conjuntos de dados, utilizado posteriormente como referência para a carga na camada Gold.
 
 **Estatísticas Descritivas Iniciais – Ações da B3:**
+
 <img width="875" height="224" alt="image" src="https://github.com/user-attachments/assets/be5be937-2ba4-4e1e-88e3-4e488a10c82b" />
 
 **Estatísticas descritivas iniciais - Indicadores Econômicos:**
+
 <img width="693" height="251" alt="image" src="https://github.com/user-attachments/assets/16b0a22f-2ea0-431a-b35d-ee5abb57128d" />
 
 Essas análises orientaram a definição do escopo utilizado no MVP e a parametrização das etapas de transformação.
@@ -227,6 +229,7 @@ Após a aplicação do modelo em Esquema Estrela, foram realizadas validações 
   Não foram identificados valores nulos nas colunas críticas das tabelas fato (`fact_acoes_b3` e `fact_indicadores_economicos`).
 
 **Evidências:**
+
 <img width="652" height="345" alt="image" src="https://github.com/user-attachments/assets/8770db10-f05d-45ff-b78e-c11a652b1802" />
 
 <img width="686" height="320" alt="image" src="https://github.com/user-attachments/assets/af16d1e8-2be6-47b8-9765-82d9f1af03b5" />
