@@ -210,7 +210,7 @@ Na etapa de exploração inicial dos dados brutos, foram realizadas verificaçõ
 <img width="1832" height="403" alt="image" src="https://github.com/user-attachments/assets/bc876c4b-cf9a-4651-b395-8b06ebb4a857" />
 
 - A verificação temporal permitiu identificar o intervalo comum (min e max) entre os conjuntos de dados, utilizado posteriormente como referência para a carga na camada Gold.
-- 
+
 **Estatísticas Descritivas Iniciais – Ações da B3:**
 <img width="875" height="224" alt="image" src="https://github.com/user-attachments/assets/be5be937-2ba4-4e1e-88e3-4e488a10c82b" />
 
