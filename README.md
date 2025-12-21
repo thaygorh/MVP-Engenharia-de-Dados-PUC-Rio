@@ -3,8 +3,8 @@
 ## Objetivo
 
 O objetivo deste MVP é projetar e implementar um pipeline de dados em nuvem para analisar o desempenho histórico de ações negociadas na B3, a partir de dados públicos.
-A partir dos dados históricos coletados e tratados, o trabalho tem como finalidade avaliar retorno, risco e consistência de desempenho dos ativos de renda variável ao longo do tempo, apoiando análises comparativas entre diferentes ações e períodos.
-De forma complementar, indicadores macroeconômicos são utilizados como variáveis de contexto, permitindo observar o comportamento dos ativos em diferentes cenários econômicos.
+Com base nos dados históricos coletados e tratados, o trabalho visa avaliar o retorno, o risco e a consistência de desempenho dos ativos de renda variável ao longo do tempo, apoiando análises comparativas entre diferentes ações e períodos.
+De forma complementar, utilizar indicadores macroeconômicos como variáveis de contexto, permitindo observar o comportamento dos ativos em distintos cenários econômicos.
 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
@@ -77,17 +77,15 @@ Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimen
 
 ---
 
-### Considerações sobre Renda Fixa e Indicadores Macroeconômicos
+### Indicadores Macroeconômicos como Contexto Analítico
 
-Neste MVP, não há dados de instrumentos individuais de **renda fixa** (ex.: Tesouro Direto, CDB, debêntures) no conjunto de dados utilizado.  
-Como alternativa, a renda fixa é analisada de forma indireta por meio de **indicadores macroeconômicos** armazenados na tabela `fact_indicadores_economicos`, incluindo:
+Neste MVP, o foco principal da análise está nos ativos de renda variável, representados pelas ações negociadas na B3.
 
 - **taxa_selic**: taxa básica de juros da economia brasileira;
 - **ipca**: índice oficial de inflação;
 - **igpm**: índice geral de preços;
+- **inpc**: índice nacional de preços ao consumidor;
 - **desemprego_pnad**: taxa de desemprego.
-
-Esses indicadores funcionam como variáveis de contexto macroeconômico e são utilizados como referência para análises comparativas com os ativos de renda variável representados no modelo pelas ações da dimensão `dim_acoes_b3`.
 
 O indicador de desemprego foi mantido no modelo por já estar disponível no conjunto de dados e por representar um fator macroeconômico que pode impactar o comportamento do mercado e dos ativos de renda variável, possibilitando análises exploratórias complementares.
 
