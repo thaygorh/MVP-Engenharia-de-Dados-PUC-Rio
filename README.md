@@ -12,8 +12,8 @@ Com base nesse objetivo, o MVP busca responder às seguintes questões:
 2. Considerando os últimos 3 anos, qual foi a média de retorno das ações analisadas? E como esse valor se comporta nos últimos 12 meses?
 3. Considerando os últimos 3 anos, quais ações apresentaram a menor volatilidade média, indicando maior estabilidade de preços?
 4. Qual é a variabilidade (volatilidade) dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando:
-- as 10 ações mais estáveis.
-- as 10 ações mais voláteis.
+  - as 10 ações mais estáveis.
+  - as 10 ações mais voláteis.
 5. Ao longo de todo o período histórico disponível, quais ações apresentaram maior consistência de retorno, considerando a menor variação ao longo do tempo?
 6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para as ações analisadas ao longo do histórico disponível?
 7. Como os principais indicadores macroeconômicos (ex.: taxa Selic, inflação) se comportaram nos períodos de melhor e pior desempenho das ações, servindo como contexto para a análise dos resultados?
