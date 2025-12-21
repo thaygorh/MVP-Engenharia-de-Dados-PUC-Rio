@@ -201,12 +201,15 @@ A análise de qualidade dos dados foi realizada de forma incremental ao longo da
 
 #### Camada Bronze
 
-Na etapa de exploração inicial dos dados brutos, foram realizadas verificações estruturais e estatísticas que resultaram nas seguintes decisões:
+Na etapa de exploração inicial dos dados brutos, foram realizadas verificações estruturais e estatísticas.
 
 - A tabela `indices_b3` não apresentou registros após a leitura dos dados brutos.  
   O conjunto foi mantido apenas para fins de documentação, mas não foi utilizado nas etapas seguintes do MVP.
+  **Evidência:**
+  <img width="1832" height="403" alt="image" src="https://github.com/user-attachments/assets/bc876c4b-cf9a-4651-b395-8b06ebb4a857" />
 
-- A análise exploratória dos dados de ações identificou a presença de valores iguais a zero ou negativos em colunas de preço (`open`, `high`, `low` e `close`), comportamento já observado na origem dos dados.
+  
+- A análise exploratória dos dados de ações identificou a presença de valores iguais a zero ou negativos em colunas de preço (`open`, `high`, `low` e `close`).
 
 - A verificação temporal permitiu identificar o intervalo comum entre os conjuntos de dados, utilizado posteriormente como referência para a carga na camada Gold.
 
