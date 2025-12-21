@@ -143,4 +143,34 @@ Foi construído um **Catálogo de Dados** com o objetivo de documentar os princi
 
 ---
 
+### Linhagem de Dados
+
+A linhagem de dados descreve o fluxo de origem, transformação e disponibilização dos dados ao longo do pipeline implementado neste MVP.
+
+Os dados têm origem em arquivos públicos no formato CSV, obtidos a partir da plataforma Kaggle, e percorrem as seguintes etapas no Databricks:
+
+**Raw**
+- Armazenamento dos arquivos CSV em sua forma original.
+- Nenhuma transformação aplicada.
+
+**Bronze**
+- Leitura dos arquivos CSV utilizando SQL (`read_files`).
+- Criação de views para acesso estruturado aos dados:
+  - `bronze.acoes_b3`
+  - `bronze.indicadores_economicos`
+- Preservação da granularidade e estrutura original dos dados.
+
+**Gold**
+- Aplicação do modelo analítico em Esquema Estrela.
+- Criação das dimensões e tabelas fato:
+  - `dim_date`
+  - `dim_acoes_b3`
+  - `fact_acoes_b3`
+  - `fact_indicadores_economicos`
+- Relacionamento das tabelas fato às dimensões por meio de chaves substitutas (`date_id`, `symbol_id`).
+
+A dimensão `dim_date` atua como ponto central de integração temporal entre as tabelas fato, permitindo análises comparativas entre dados de mercado (ações) e indicadores macroeconômicos.
+
+---
+
 **Autor:** Thaygor Gonçalves
