@@ -201,8 +201,7 @@ As principais transformações aplicadas foram:
 - **Padronização temporal**: foi definido um intervalo de datas comum entre os conjuntos de dados de ações e indicadores econômicos, garantindo consistência analítica. O período considerado vai de **2010-01-04** até **2025-02-17**.
 - **Criação de chaves substitutas**: foram criadas chaves numéricas (`date_id`, `symbol_id`) para representar datas e ativos, reduzindo dependências de campos textuais e facilitando junções analíticas.
 - **Junções entre dados e dimensões**: as tabelas fato foram construídas a partir de junções entre os dados da camada Bronze e as dimensões `dim_date` e `dim_acoes_b3`, seguindo o padrão 1:N característico do Esquema Estrela.
-- **Aplicação de filtros e tratamentos**: foram aplicados filtros temporais, conversão explícita de tipos de dados e padronização de nomes de colunas. Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para auditoria e validações futuras.
-
+- **Aplicação de filtros e tratamentos**: foram aplicados filtros temporais, conversão explícita de tipos de dados e padronização de nomes de colunas. Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para validações futuras.
 
 ---
 
