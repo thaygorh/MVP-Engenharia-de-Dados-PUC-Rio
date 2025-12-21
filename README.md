@@ -9,7 +9,7 @@ De forma complementar, utilizar indicadores macroeconômicos como variáveis de 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
 1. Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno acumulado?
-2. Considerando os últimos 12 meses, qual foi o retorno médio das ações negociadas na B3?
+2. Considerando os últimos 12 meses, qual foi o retorno médio e o retorno mediano das ações negociadas na B3?
 3. Em qual ano a inflação medida pelo IPCA foi mais elevada e em qual ano foi mais baixa?
 4. Qual é a volatilidade dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando as 5 ações mais estáveis e as 5 mais voláteis?
 5. Qual é a relação entre o índice de desemprego e a taxa Selic e IPCA ao longo do tempo?
@@ -288,7 +288,7 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 ---
 
 ### Pergunta 2  
-**Considerando os últimos 12 meses, qual foi o retorno médio das ações negociadas na B3?**
+**Considerando os últimos 12 meses, qual foi o retorno médio e o retorno mediano das ações negociadas na B3?**
 
 ### Resultado:
 
