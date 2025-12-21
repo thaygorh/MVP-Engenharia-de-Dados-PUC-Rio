@@ -230,30 +230,30 @@ Após a aplicação do modelo em Esquema Estrela, foram realizadas validações 
 
 **Evidências:**
 
-<img width="652" height="345" alt="image" src="https://github.com/user-attachments/assets/8770db10-f05d-45ff-b78e-c11a652b1802" />
+<img width="662" height="281" alt="image" src="https://github.com/user-attachments/assets/26c8648c-4da5-4e83-8b5d-d6984bb4a5bc" />
 
-<img width="686" height="320" alt="image" src="https://github.com/user-attachments/assets/af16d1e8-2be6-47b8-9765-82d9f1af03b5" />
+<img width="650" height="255" alt="image" src="https://github.com/user-attachments/assets/eb4baea6-31cc-4f29-919d-17b50c50f5a8" />
 
 - **Valores inválidos em preços**:  
 Foram identificados registros com valores iguais a zero ou negativos nas colunas de preços (open, high e low). Para as análises propostas neste MVP, será priorizado o uso do preço de fechamento (close), uma vez que apresentou apenas um registro inválido em todo o conjunto de dados, reduzindo o possíveis inconsistências.
 
 **Evidência:**
 
-<img width="567" height="326" alt="image" src="https://github.com/user-attachments/assets/d3a6cf17-baae-4fb9-b028-75f577985b9d" />
+<img width="572" height="264" alt="image" src="https://github.com/user-attachments/assets/124609fd-a297-4c68-94ef-a7fd244ad7d9" />
 
 - **Preço ajustado (`adj_close`)**:  
   Não foram identificados valores nulos nessa coluna.
 
 **Evidência:**
 
-<img width="550" height="245" alt="image" src="https://github.com/user-attachments/assets/482c2a90-3b8c-49dc-82ed-18d3f95b30e0" />
+<img width="542" height="246" alt="image" src="https://github.com/user-attachments/assets/4d836ba1-306e-4e7c-b383-63ae859e67df" />
 
 - **Consistência temporal**:  
   As tabelas fato compartilham um intervalo temporal comum entre **2010-01-04** e **2025-02-17**, garantindo coerência para análises comparativas.
 
 **Evidência:**
 
-<img width="440" height="250" alt="image" src="https://github.com/user-attachments/assets/0ab99db7-ecad-4c87-82ac-6dd0b64669b1" />
+<img width="447" height="234" alt="image" src="https://github.com/user-attachments/assets/1f886054-38c6-4f19-a82b-cc29d9bf7e2b" />
 
 As consultas detalhadas, estatísticas descritivas e validações aplicadas encontram-se documentadas no notebook do Databricks, referenciado neste repositório.
 
