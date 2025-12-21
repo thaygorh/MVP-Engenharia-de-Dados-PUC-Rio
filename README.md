@@ -42,7 +42,16 @@ Os arquivos foram inicialmente armazenados em sua forma original, preservando a 
 
 ## Carga
 
-*(Seção a ser detalhada após a consolidação do pipeline de ETL no Databricks.)*
+Após a aplicação das transformações descritas na etapa de ETL, os dados foram carregados e persistidos na camada Gold do Databricks, seguindo o modelo analítico em Esquema Estrela definido neste MVP.
+Como resultado desse processo, foram disponibilizadas tabelas dimensão (`dim_date` e `dim_acoes_b3`) e tabelas fato (`fact_acoes_b3` e `fact_indicadores_economicos`), armazenadas de forma persistente na plataforma e prontas para consultas analíticas e para a execução das análises apresentadas nas seções seguintes.
+
+**Evidência – Tabelas persistidas na camada Gold (dimensões e fatos)**
+
+<img width="947" height="614" alt="image" src="https://github.com/user-attachments/assets/3f85b8e5-4137-4cd0-99f3-80f934993afc" />
+
+**Evidência – Verificação de consistência temporal (intervalo comum)**
+
+<img width="427" height="242" alt="image" src="https://github.com/user-attachments/assets/8c533097-cf01-489a-8702-9e9c0a481c5b" />
 
 ---
 
@@ -174,35 +183,17 @@ Os dados têm origem em arquivos públicos no formato CSV, obtidos a partir da p
 
 A dimensão `dim_date` atua como ponto central de integração temporal entre as tabelas fato, permitindo análises comparativas entre dados de mercado (ações) e indicadores macroeconômicos.
 
-### Transformações e Carga dos Dados (ETL)
+### Transformações dos Dados (ETL)
 
-Após a ingestão e organização dos dados nas camadas Raw e Bronze, foi implementado o processo de transformação e carga para a camada Gold, com o objetivo de disponibilizar dados analíticos consistentes e aderentes ao modelo em Esquema Estrela.
+Após a ingestão e organização dos dados nas camadas Raw e Bronze, foi implementado o processo de transformação dos dados com o objetivo de adequá-los ao modelo analítico em Esquema Estrela.
 
 As principais transformações aplicadas foram:
 
-- **Padronização temporal**:  
-  Foi definido um intervalo de datas comum entre os conjuntos de dados de ações e indicadores econômicos, garantindo consistência analítica.  
-  O período considerado vai de **2010-01-04** até **2025-02-17**.
+- **Padronização temporal**: foi definido um intervalo de datas comum entre os conjuntos de dados de ações e indicadores econômicos, garantindo consistência analítica. O período considerado vai de **2010-01-04** até **2025-02-17**.
+- **Criação de chaves substitutas**: foram criadas chaves numéricas (`date_id`, `symbol_id`) para representar datas e ativos, reduzindo dependências de campos textuais e facilitando junções analíticas.
+- **Junções entre dados e dimensões**: as tabelas fato foram construídas a partir de junções entre os dados da camada Bronze e as dimensões `dim_date` e `dim_acoes_b3`, seguindo o padrão 1:N característico do Esquema Estrela.
+- **Aplicação de filtros e tratamentos**: foram aplicados filtros temporais, conversão explícita de tipos de dados e padronização de nomes de colunas. Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para auditoria e validações futuras.
 
-- **Criação de chaves substitutas**:  
-  Foram criadas chaves numéricas (`date_id`, `symbol_id`) para representar datas e ativos, reduzindo dependências de campos textuais e facilitando junções analíticas.
-
-- **Junções entre dados e dimensões**:  
-  As tabelas fato foram construídas a partir de junções entre os dados da camada Bronze e as dimensões `dim_date` e `dim_acoes_b3`, seguindo o padrão 1:N característico do Esquema Estrela.
-
-- **Aplicação de filtros e tratamentos**:  
-  Foram aplicados filtros temporais, conversão explícita de tipos de dados e padronização de nomes de colunas.  
-  Campos auxiliares de rastreabilidade (`rescued_data`) foram mantidos para auditoria e validações futuras.
-
-O resultado desse processo é a disponibilização de tabelas fato e dimensões consistentes, persistidas na camada Gold e prontas para análises analíticas e exploração dos dados.
-
-**Evidência – Tabelas persistidas na camada Gold (dimensões e fatos)**
-
-<img width="947" height="614" alt="image" src="https://github.com/user-attachments/assets/3f85b8e5-4137-4cd0-99f3-80f934993afc" />
-
-**Evidência – Verificação de consistência temporal (intervalo comum)**
-
-<img width="427" height="242" alt="image" src="https://github.com/user-attachments/assets/8c533097-cf01-489a-8702-9e9c0a481c5b" />
 
 ---
 
