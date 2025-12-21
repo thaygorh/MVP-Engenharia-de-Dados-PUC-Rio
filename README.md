@@ -12,9 +12,7 @@ Com base nesse objetivo, o MVP busca responder às seguintes questões:
 2. Considerando os últimos 12 meses, qual foi o retorno médio das ações negociadas na B3?
 3. Em qual ano a inflação medida pelo IPCA foi mais elevada e em qual ano foi mais baixa?
 4. Qual é a volatilidade dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando as 5 ações mais estáveis e as 5 mais voláteis?
-5. Ao longo de todo o período histórico disponível, quais ações apresentaram maior consistência de retorno, considerando a menor variação ao longo do tempo?
-6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para as ações analisadas ao longo do histórico disponível?
-7. Como os principais indicadores macroeconômicos (ex.: taxa Selic, inflação) se comportaram nos períodos de melhor e pior desempenho das ações, servindo como contexto para a análise dos resultados?
+5. Qual é a relação entre o índice de desemprego e a taxa Selic e IPCA ao longo do tempo?
 
 ---
 
@@ -321,6 +319,22 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 
 ---
 
+### Pergunta 5  
+** Qual é a relação entre o índice de desemprego e a taxa Selic e IPCA ao longo do tempo?**
+
+### Resultado:
+
+<img width="775" height="459" alt="image" src="https://github.com/user-attachments/assets/a7f21829-c2f0-46a6-a152-31503a6261a1" />
+
+- Período analisado: anos disponíveis na base de dados, com base na data máxima registrada;
+- Indicadores analisados: IPCA, taxa Selic e desemprego (PNAD Contínua);
+- Fonte dos dados: `fact_indicadores_economicos`;
+- Métricas utilizadas:
+- IPCA acumulado anual (%);
+- Taxa Selic média anual (%);
+- desemprego médio anual (%);
+- A análise não indica uma relação linear consistente entre Selic, inflação e desemprego ao longo do período analisado;
+- Observa-se que, em determinados anos, a Selic baixa coexistiu com níveis elevados de desemprego, enquanto em outros a Selic elevada ocorreu simultaneamente à redução do desemprego.
 
 ---
 
