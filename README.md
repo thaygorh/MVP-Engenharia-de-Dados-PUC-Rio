@@ -335,7 +335,7 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 ---
 
 ### Pergunta 5  
-** Qual é a relação entre o índice de desemprego e a taxa Selic e IPCA ao longo do tempo?**
+**Qual é a relação entre o índice de desemprego e a taxa Selic e IPCA ao longo do tempo?**
 
 ### Resultado:
 
