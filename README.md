@@ -9,11 +9,9 @@ De forma complementar, utilizar indicadores macroeconômicos como variáveis de 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
 1. Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno acumulado?
-2. Considerando os últimos 3 anos, qual foi a média de retorno das ações analisadas? E como esse valor se comporta nos últimos 12 meses?
-3. Considerando os últimos 3 anos, quais ações apresentaram a menor volatilidade média, indicando maior estabilidade de preços?
-4. Qual é a variabilidade (volatilidade) dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando:
-  - as 10 ações mais estáveis.
-  - as 10 ações mais voláteis.
+2. Considerando os últimos 12 meses, qual foi o retorno médio das ações negociadas na B3?
+3. Em qual ano a inflação medida pelo IPCA foi mais elevada e em qual ano foi mais baixa?
+4. Qual é a volatilidade dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando as 5 ações mais estáveis e as 5 mais voláteis?
 5. Ao longo de todo o período histórico disponível, quais ações apresentaram maior consistência de retorno, considerando a menor variação ao longo do tempo?
 6. Qual foi o melhor e o pior período (por exemplo, ano ou mês) de retorno para as ações analisadas ao longo do histórico disponível?
 7. Como os principais indicadores macroeconômicos (ex.: taxa Selic, inflação) se comportaram nos períodos de melhor e pior desempenho das ações, servindo como contexto para a análise dos resultados?
@@ -267,24 +265,64 @@ As consultas detalhadas, estatísticas descritivas e validações aplicadas enco
 
 <img width="870" height="239" alt="image" src="https://github.com/user-attachments/assets/0676ceaf-4f96-4626-821e-7bd38757c726" />
 
-- Período: últimos 36 meses, com base na data máxima disponível (2025-02-17);
-- Ações B3: (fact_acoes_b3);
-- Métrica utilizada: retorno acumulado;
-- **preço inicial** e **preço final** estão expressos em reais (R$);
-- **retorno em múltiplo (X)** indica quantas vezes o preço final superou o inicial;
-- **retorno percentual (%)** representa a valorização total do ativo no período;
-
+- Período analisado: últimos 36 meses, com base na data máxima disponível (2025-02-17);
+- Ativos analisado: ações negociadas na B3 (`fact_acoes_b3`);
+- Métrica utilizada: retorno acumulado no período;
+- Preço inicial e preço final expressos em reais (R$);
+- Retorno em múltiplo (X): indica quantas vezes o preço final superou o inicial;
+- Retorno percentual (%): representa a valorização total do ativo no período.
 
 ---
 
 ### Pergunta 2  
-**Considerando os últimos 3 anos, qual tipo de investimento apresentou a maior média de retorno?**
+**Considerando os últimos 12 meses, qual foi o retorno médio das ações negociadas na B3?**
+
+### Resultado:
+
+<img width="836" height="164" alt="image" src="https://github.com/user-attachments/assets/5ee3e26a-ff60-4272-a8b8-3710f75248e5" />
+
+- Período analisado: últimos 12 meses, com base na data máxima disponível (2025-02-17);
+- Ativos analisados: ações negociadas na B3 (`fact_acoes_b3`);
+- Métrica utilizada: retorno acumulado em 12 meses;
+- Retorno médio (%): representa a média dos retornos individuais das ações no período;
+- Retorno mediano (%): indica o retorno central da distribuição, reduzindo o impacto de outliers;
+- Quantidade de ações consideradas: total de ativos com dados válidos no período analisado.
 
 ---
 
 ### Pergunta 3  
-**Considerando os últimos 3 anos, qual tipo de investimento apresentou a menor volatilidade média?**
+**Em qual ano a inflação medida pelo IPCA foi mais elevada e em qual ano foi mais baixa?**
 
+### Resultado:
+
+<img width="384" height="154" alt="image" src="https://github.com/user-attachments/assets/88960ba4-b41d-43e6-972e-6c4601e11859" />
+
+- Indicador analisado: IPCA (`fact_indicadores_economicos`);
+- Tabela de datas utilizada: `dim_date`;
+- Agregação: soma anual do IPCA (valores mensais somados por ano);
+- Métrica utilizada: `ipca_anual_pct` (% acumulado no ano);
+- A análise permite identificar os anos com maior e menor inflação anual no período disponível na base.
+
+---
+
+### Pergunta 4  
+**Qual é a volatilidade dos retornos das ações ao longo do tempo, destacando as 5 ações mais estáveis e as 5 mais voláteis?**
+
+### Resultado:
+
+<img width="820" height="285" alt="image" src="https://github.com/user-attachments/assets/7d6d032c-c8c8-4c84-8f2e-ad98d7e49f9f" />
+
+- Período analisado: últimos 36 meses, com base na data máxima disponível;
+- Ativos analisados: ações negociadas na B3 (`fact_acoes_b3`);
+- Métrica utilizada: volatilidade dos retornos (desvio padrão);
+- A volatilidade mede a intensidade das oscilações dos preços ao longo do tempo, independentemente da direção (alta ou queda);
+- Ações menos voláteis são mais estáveis, mas também podem indicar menor variação dos retornos;
+- Ações mais voláteis podem indicar maior risco e maior oscilação dos preços, podendo refletir tanto ganhos elevados quanto perdas acentuadas.
+
+---
+
+
+---
 
 ---
 
