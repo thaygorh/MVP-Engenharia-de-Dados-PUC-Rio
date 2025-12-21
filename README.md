@@ -8,7 +8,7 @@ De forma complementar, utilizar indicadores macroeconômicos como variáveis de 
 
 Com base nesse objetivo, o MVP busca responder às seguintes questões:
 
-1. Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno médio?
+1. Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno acumulado?
 2. Considerando os últimos 3 anos, qual foi a média de retorno das ações analisadas? E como esse valor se comporta nos últimos 12 meses?
 3. Considerando os últimos 3 anos, quais ações apresentaram a menor volatilidade média, indicando maior estabilidade de preços?
 4. Qual é a variabilidade (volatilidade) dos retornos das ações ao longo do tempo e como ela se comporta em diferentes períodos, destacando:
@@ -255,6 +255,35 @@ Foram identificados registros com valores iguais a zero ou negativos nas colunas
 <img width="447" height="234" alt="image" src="https://github.com/user-attachments/assets/1f886054-38c6-4f19-a82b-cc29d9bf7e2b" />
 
 As consultas detalhadas, estatísticas descritivas e validações aplicadas encontram-se documentadas no notebook do Databricks, referenciado neste repositório.
+
+---
+
+## Análises e Resultados
+
+### Pergunta 1  
+**Considerando os últimos 3 anos, quais são as 5 ações que apresentaram o maior retorno acumulado?**
+
+### Resultado:
+
+<img width="870" height="239" alt="image" src="https://github.com/user-attachments/assets/0676ceaf-4f96-4626-821e-7bd38757c726" />
+
+- Período: últimos 36 meses, com base na data máxima disponível (2025-02-17);
+- Ações B3: (fact_acoes_b3);
+- Métrica utilizada: retorno acumulado;
+- **preço inicial** e **preço final** estão expressos em reais (R$);
+- **retorno em múltiplo (X)** indica quantas vezes o preço final superou o inicial;
+- **retorno percentual (%)** representa a valorização total do ativo no período;
+
+
+---
+
+### Pergunta 2  
+**Considerando os últimos 3 anos, qual tipo de investimento apresentou a maior média de retorno?**
+
+---
+
+### Pergunta 3  
+**Considerando os últimos 3 anos, qual tipo de investimento apresentou a menor volatilidade média?**
 
 
 ---
