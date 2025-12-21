@@ -347,9 +347,9 @@ O pipeline implementado no Databricks, organizado nas camadas Bronze e Gold, mos
 
 As análises realizadas evidenciaram diferenças significativas no desempenho das ações analisadas, com forte heterogeneidade tanto nos retornos acumulados quanto nos níveis de volatilidade ao longo do período observado. Enquanto alguns ativos apresentaram elevada valorização no intervalo analisado, outros demonstraram comportamento mais estável, com menores oscilações de preço, evidenciando perfis distintos de risco e retorno entre as ações negociadas na B3.
 
-No contexto macroeconômico, a análise conjunta dos indicadores de inflação (IPCA), taxa Selic e desemprego indicou que essas variáveis não apresentam uma relação linear estável ao longo do tempo. Observou-se que, em determinados anos, movimentos de alta ou baixa da taxa Selic ocorreram simultaneamente a variações distintas nos níveis de inflação e desemprego, reforçando a necessidade de análises contextualizadas e temporais para interpretação do ambiente econômico.
+No contexto macroeconômico, a análise conjunta dos indicadores de inflação (IPCA), taxa Selic e desemprego indicou que essas variáveis não apresentam uma relação linear estável ao longo do tempo. Observou-se que, em determinados anos, movimentos de alta ou baixa da taxa Selic ocorreram simultaneamente a variações distintas nos níveis de inflação e desemprego, reforçando a necessidade de análises contextualizadas para interpretação do ambiente econômico.
 
-De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, cumprindo o propósito do trabalho e demonstrando, na prática, a aplicação dos conceitos de Engenharia de Dados abordados na disciplina.
+De forma geral, os resultados obtidos permitiram responder às perguntas de negócio definidas no objetivo do MVP, evidenciando que o propósito do trabalho foi cumprido e que os conceitos abordados nas disciplinas foram aplicados de forma prática.
 
 ---
 
