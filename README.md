@@ -101,15 +101,15 @@ Os relacionamentos entre as tabelas seguem o padrão **1:N**, partindo das dimen
 
 ### Indicadores Macroeconômicos como Contexto Analítico
 
-Neste MVP, o foco principal da análise está nos ativos de renda variável, representados pelas ações negociadas na B3.
+Neste MVP, o foco principal da análise está no desempenho das ações negociadas na B3, que representam os ativos analisados no modelo. Os indicadores macroeconômicos não constituem ativos financeiros, sendo utilizados como variáveis de contexto para auxiliar a interpretação ao longo do tempo.
+
+Esses indicadores estão armazenados em uma tabela fato específica (`fact_indicadores_economicos`) e incluem:
 
 - **taxa_selic**: taxa básica de juros da economia brasileira;
 - **ipca**: índice oficial de inflação;
 - **igpm**: índice geral de preços;
 - **inpc**: índice nacional de preços ao consumidor;
 - **desemprego_pnad**: taxa de desemprego.
-
-O indicador de desemprego foi mantido no modelo por já estar disponível no conjunto de dados e por representar um fator macroeconômico que pode impactar o comportamento do mercado e dos ativos de renda variável, possibilitando análises exploratórias complementares.
 
 ---
 
